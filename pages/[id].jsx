@@ -40,7 +40,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className='h-screen flex flex-col'>
-        <Navbar value={editorValue} language={language} />
+        <Navbar value={editorValue} language={language} hideButton={true} />
         <Editor
           value={[editorValue, setEditorValue]}
           languageState={[language, setLanguage]}

@@ -15,18 +15,19 @@ const Navbar = (props) => {
   return (
     <div className='bg-mantle flex flex-row p-2'>
       <div className='flex flex-row flex-grow items-center space-x-4'>
-        <div>
+        <div className='p-2'>
           <Link href='/'>Paste</Link>
         </div>
         <div className='text-subtext1'>{props.language}</div>
       </div>
       <div className='flex flex-row'>
-        <button
-          className='text-text bg-surface0 hover:bg-surface1 transition-colors p-2 rounded-md'
-          onClick={handleSave}
-        >
-          Save
-        </button>
+        {!props.hideButton && <button
+        className='text-text bg-surface0 hover:bg-surface1 transition-colors p-2 rounded-md'
+        onClick={handleSave}
+      >
+        Save
+      </button> }
+        
       </div>
     </div>
   )
