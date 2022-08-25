@@ -18,7 +18,10 @@ Save your changes, and copy the URL.`)
       </Head>
       <main className='h-screen flex flex-col'>
         <Navbar value={editorValue} language={language} />
-        <Editor value={editorValue} languageState={[language, setLanguage]} />
+        <Editor
+          value={[editorValue, setEditorValue]}
+          languageState={[language, setLanguage]}
+        />
       </main>
     </div>
   )

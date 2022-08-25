@@ -22,7 +22,7 @@ const Editor = (props) => {
     <div className='flex flex-grow'>
       <Monaco
         language={props.languageState[0]}
-        value={props.value}
+        value={props.value[0]}
         theme='theme'
         beforeMount={defineTheme}
         onMount={handleEditorDidMount}
@@ -32,6 +32,7 @@ const Editor = (props) => {
           // going to be lazy and just assume that xml users are actually using html
           if (language == 'xml') language = 'html'
           props.languageState[1](language)
+          props.value[1](e)
         }}
         options={{
           fontSize: '16px',

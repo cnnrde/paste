@@ -40,6 +40,10 @@ export default async function handler(req, res) {
     })
 
   // send paste to client
+  if (!paste.items[0]) {
+    res.status(404).end()
+    return
+  }
   res.status(200).json({
     content: paste.items[0].content,
     language: paste.items[0].language,

@@ -11,6 +11,9 @@ const getPaste = async (id) => {
       id,
     }),
   })
+  if (req.status == 404) {
+    window.location.href = '/'
+  }
   const { content, language } = await req.json()
   return { content, language }
 }
@@ -38,7 +41,11 @@ export default function Home() {
       </Head>
       <main className='h-screen flex flex-col'>
         <Navbar value={editorValue} language={language} />
-        <Editor value={editorValue} languageState={[language, setLanguage]} />
+        <Editor
+          value={[editorValue, setEditorValue]}
+          languageState={[language, setLanguage]}
+          readOnly={true}
+        />
       </main>
     </div>
   )
