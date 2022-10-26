@@ -1,4 +1,4 @@
 # paste
-pastebin/hastebin clone
+[pastebin](https://pastebin.com)/hastebin clone
 
 built with next, tailwind, deta
